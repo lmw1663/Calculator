@@ -24,7 +24,8 @@ The request message is formatted as follows:
 Operation Operand1 Operand2
 For example, the following request message requests the server to add 5 and 3:
 
-ADD 5 3
+    ADD 5 3
+    
 # 2.2. Response Message
 
 The response message is sent from the server to the client. It contains the following fields:
@@ -34,31 +35,30 @@ ErrorCode: The error code if an error occurred (e.g., TOO_MANY_ARGUMENTS, DIVIDE
 Message: The error message or the answer if no error occurred.
 The response message is formatted as follows:
 
-JSON
-{
-  "hasError": "yes" or "no",
-  "errorCode": "ErrorCode",
-  "message": "ErrorMessage or Answer"
-}
-
+```{
+      "hasError": "yes" or "no",
+      "errorCode": "ErrorCode",
+      "message": "ErrorMessage or Answer"
+    }
+```
 For example, the following response message indicates that an error occurred because the request contained too many arguments:
-
+```
 JSON
 {
   "hasError": "yes",
   "errorCode": "TOO_MANY_ARGUMENTS",
   "message": "too_many_arguments"
 }
-
+```
 The following response message indicates that the server successfully added 5 and 3:
-
+```
 JSON
 {
   "hasError": "no",
   "errorCode": "none",
   "message": "8"
 }
-
+```
 # 3. Error Codes
 
 The following error codes may be returned by the server:
@@ -72,17 +72,19 @@ WRONG_EXPRESSION: The expression is invalid.
 The following is an example of how to use the socket calculator:
 
 The client sends the following request message to the server:
-
+```
 ADD 5 3
+```
 The server processes the request and sends the following response message to the client:
-
+```
 JSON
 {
   "hasError": "no",
   "errorCode": "none",
   "message": "8"
 }
-코드를 사용할 때는 주의하시기 바랍니다. 자세히 알아보기
+```
+
 The client displays the answer to the user.
 
 # 5. Conclusion
@@ -113,8 +115,9 @@ Once the client and server are running, you can enter a request. The request sho
 
 Operation Operand1 Operand2
 For example, to add 5 and 3, you would enter the following request:
-
+```
 ADD 5 3
+```
 The server will respond with the result of the operation. In this case, the server would respond with the following:
 
 8
