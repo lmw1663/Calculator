@@ -1,16 +1,18 @@
-Protocol Definition for Socket Calculator
+# Protocol Definition for Socket Calculator
 
 Date: 2023-11-09
 
-#1. Introduction
+Author: Lee minwoo
+
+# 1. Introduction
 
 This document defines the protocol for a socket-based calculator. The calculator supports four operations: addition, subtraction, multiplication, and division.
 
-#2. Protocol
+# 2. Protocol
 
 The protocol consists of the following messages:
 
-#2.1. Request Message
+# 2.1. Request Message
 
 The request message is sent from the client to the server. It contains the following fields:
 
@@ -23,7 +25,7 @@ Operation Operand1 Operand2
 For example, the following request message requests the server to add 5 and 3:
 
 ADD 5 3
-#2.2. Response Message
+# 2.2. Response Message
 
 The response message is sent from the server to the client. It contains the following fields:
 
@@ -57,14 +59,15 @@ JSON
   "message": "8"
 }
 
-#3. Error Codes
+# 3. Error Codes
 
 The following error codes may be returned by the server:
 
 TOO_MANY_ARGUMENTS: The request contained too many arguments.
 DIVIDED_BY_ZERO: The client attempted to divide by zero.
 WRONG_EXPRESSION: The expression is invalid.
-#4. Example Usage
+
+# 4. Example Usage
 
 The following is an example of how to use the socket calculator:
 
@@ -82,7 +85,7 @@ JSON
 코드를 사용할 때는 주의하시기 바랍니다. 자세히 알아보기
 The client displays the answer to the user.
 
-#5. Conclusion
+# 5. Conclusion
 
 This protocol definition document provides a comprehensive overview of the protocol for the socket-based calculator. This protocol allows clients to perform basic arithmetic operations using a socket-based communication channel.
 
