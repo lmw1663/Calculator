@@ -74,7 +74,7 @@ public class CalcServer {
         // Create a thread pool with 10 threads
         ExecutorService executorService = Executors.newFixedThreadPool(10);
 
-        // Enter an infinite loop to accept client connections
+        // Enter an infinite loop to accept client connectio
         while (true) {
         	 // Accept a client connection
             Socket socket = serverSocket.accept();
